@@ -13,17 +13,41 @@ tickets([25, 100]) // => NO. Vasya will not have enough money to give change to 
 tickets([25, 25, 50, 50, 100]) // => NO. Vasya will not have the right bills to give 75 dollars of change (you can't make two bills of 25 from one of 50) */
 
 function tickets(peopleInLine) {
-  let carteira = 0;
+  let dollars25 = 0;
+  let dollars50 = 0;
+  let dollars100 = 0;
 
-  for (i = 0; i < peopleInLine.length; i += 1) {
+  for (let i = 0; i < peopleInLine.length; i += 1) {
     let client = peopleInLine[i];
 
-    if (client > 25) {
-      if (carteira < client) {
-        return "NO";
-      }
+    switch (client) {
+      case 25:
+        dollars25 += 1;
+        break;
+
+      case 50:
+        if (dollars25 > 0) {
+          dollars50 += 1;
+          dollars25 -= 1;
+        } else {
+          return "NO";
+        }
+        break;
+
+      case 100:
+        if (dollars50 > 0 && dollars25 > 0) {
+          dollars100 += 1;
+          dollars50 -= 1;
+          dollars25 -= 1;
+          break;
+        } else if (dollars25 > 2) {
+          dollars100 += 1;
+          dollars25 -= 3;
+          break;
+        } else {
+          return "NO";
+        }
     }
-    carteira += client;
   }
 
   return "YES";
