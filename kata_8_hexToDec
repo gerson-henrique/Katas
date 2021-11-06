@@ -1,0 +1,16 @@
+function hexToDec(hexadecimal) {
+ let spell= hexadecimal.toString()
+    spell = spell.split('')
+    for(let i=0; i<spell.length;i+=1){
+        let test = spell[i]
+        let testII = parseInt(test,16)
+        console.log(testII)
+        if ( isNaN( testII) ){
+            console.log(testII)
+        return -1
+    }
+    }
+    
+    return  parseInt(hexadecimal,16)
+   }
+   hexToDec('u')
