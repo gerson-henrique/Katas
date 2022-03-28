@@ -14,107 +14,61 @@
 // eight(dividedBy(three()));
 // FUNDAMENTALSFUNCTIONSCONTROL FLOWBASIC LANGUAGE FEATURESFUNCTIONAL PROGRAMMINGDECLARATIVE PROGRAMMINGHIGHER-ORDER FUNCTIONS
 
-
 function operation( firstParam, dataFunction ) {
- let response = 0;
-  if ( dataFunction ) {
-  response = dataFunction
-  switch ( response.type ){
-  case '*' : 
-  response = firstParam * response.secondParam;
-  break;
-      
-  case '/' : 
-  response = Math.floor( firstParam / response.secondParam);
-  break;
-  
-  case '+' : 
-  response = firstParam + response.secondParam;
-  break;
-      
-  case '-' : 
-  response = firstParam - response.secondParam;
-  break;
-}
- } else {
-  response = firstParam
-  }
-  
-  return response
-
-}
-
-
-
-function zero( calcData ) {
- return operation( 0, calcData ) 
-}
-
-function one( calcData ) {
- return operation(1, calcData) 
-}
-
-function two( calcData ) {
- return operation( 2, calcData ) 
-}
-
-function three( calcData ) {
-  return operation( 3, calcData ) 
-}
-
-function four( calcData ) {
-   return operation( 4, calcData ) 
-}
-
-function five( calcData ) {
-  return operation( 5, calcData ) 
-}
-
-function six( calcData ) {
-    return operation( 6, calcData ) 
-}
-
-function seven( calcData ) {
-   return operation( 7, calcData ) 
-}
-
-function eight( calcData ) {
-    return operation( 8, calcData ) 
-}
-
-function nine( calcData ) {
- return operation( 9, calcData ) 
-}
-
-function plus( number2 ) {
+  let response = 0;
+   if ( dataFunction ) {
+   response = dataFunction
+   switch ( response.type ){
+   case '*' : response = firstParam * response.secondParam;
+   case '/' : response = Math.floor( firstParam / response.secondParam);
+   case '+' : response = firstParam + response.secondParam;
+   case '-' : response = firstParam - response.secondParam;
+ }
+  } else response = firstParam 
+   return response
+ }
+ 
+ function zero( calcData ) { operation(  0, calcData ) } 
+ function one( calcData ) { operation(1, calcData ) }
+ function two( calcData ) { operation( 2, calcData ) }
+ function three( calcData ) { operation( 3, calcData ) }
+ function four( calcData ) { operation( 4, calcData ) }
+ function five( calcData ) { operation( 5, calcData ) }
+ function six( calcData ) { operation( 6, calcData ) }
+ function seven( calcData ) { operation( 7, calcData ) }
+ function eight( calcData ) { operation( 8, calcData ) }
+ function nine( calcData ) { operation( 9, calcData ) }
+ 
+ function plus( number2 ) {
+   
   const resultData = {
-    type: '+',
-    secondParam: number2,
-  }
-  
-  return resultData ;
-}
-function minus( number2 ) {
-  const resultData = {
-    type: '-',
-    secondParam: number2,
-  }
-  
-  return resultData ;
-}
-function times( number2 ) {
-  const resultData = {
-    type: '*',
-    secondParam: number2,
-  }
-  
-  return resultData ;
-}
-function dividedBy( number2 ) {
-  const resultData = {
-    type: '/',
-    secondParam: number2,
-  }
-  
-  return resultData ;
-}
+     type: '+',
+     secondParam: number2,
+   }
+   
+   return resultData ;
+ }
+ function minus( number2 ) {
+   const resultData = {
+     type: '-',
+     secondParam: number2,
+   }
+   
+   return resultData ;
+ }
+ function times( number2 ) {
+   const resultData = {
+     type: '*',
+     secondParam: number2,
+   }
+   
+   return resultData ;
+ }
+ function dividedBy( number2 ) {
+   const resultData = {
+     type: '/',
+     secondParam: number2,
+   }
+   
+   return resultData ;
+ }
