@@ -1,0 +1,120 @@
+// This time we want to write calculations using functions and get the results. Let's have a look at some examples:
+
+// seven(times(five())); // must return 35
+// four(plus(nine())); // must return 13
+// eight(minus(three())); // must return 5
+// six(dividedBy(two())); // must return 3
+// Requirements:
+
+// There must be a function for each number from 0 ("zero") to 9 ("nine")
+// There must be a function for each of the following mathematical operations: plus, minus, times, dividedBy
+// Each calculation consist of exactly one operation and two numbers
+// The most outer function represents the left operand, the most inner function represents the right operand
+// Division should be integer division. For example, this should return 2, not 2.666666...:
+// eight(dividedBy(three()));
+// FUNDAMENTALSFUNCTIONSCONTROL FLOWBASIC LANGUAGE FEATURESFUNCTIONAL PROGRAMMINGDECLARATIVE PROGRAMMINGHIGHER-ORDER FUNCTIONS
+
+
+function operation( firstParam, dataFunction ) {
+ let response = 0;
+  if ( dataFunction ) {
+  response = dataFunction
+  switch ( response.type ){
+  case '*' : 
+  response = firstParam * response.secondParam;
+  break;
+      
+  case '/' : 
+  response = Math.floor( firstParam / response.secondParam);
+  break;
+  
+  case '+' : 
+  response = firstParam + response.secondParam;
+  break;
+      
+  case '-' : 
+  response = firstParam - response.secondParam;
+  break;
+}
+ } else {
+  response = firstParam
+  }
+  
+  return response
+
+}
+
+
+
+function zero( calcData ) {
+ return operation( 0, calcData ) 
+}
+
+function one( calcData ) {
+ return operation(1, calcData) 
+}
+
+function two( calcData ) {
+ return operation( 2, calcData ) 
+}
+
+function three( calcData ) {
+  return operation( 3, calcData ) 
+}
+
+function four( calcData ) {
+   return operation( 4, calcData ) 
+}
+
+function five( calcData ) {
+  return operation( 5, calcData ) 
+}
+
+function six( calcData ) {
+    return operation( 6, calcData ) 
+}
+
+function seven( calcData ) {
+   return operation( 7, calcData ) 
+}
+
+function eight( calcData ) {
+    return operation( 8, calcData ) 
+}
+
+function nine( calcData ) {
+ return operation( 9, calcData ) 
+}
+
+function plus( number2 ) {
+  const resultData = {
+    type: '+',
+    secondParam: number2,
+  }
+  
+  return resultData ;
+}
+function minus( number2 ) {
+  const resultData = {
+    type: '-',
+    secondParam: number2,
+  }
+  
+  return resultData ;
+}
+function times( number2 ) {
+  const resultData = {
+    type: '*',
+    secondParam: number2,
+  }
+  
+  return resultData ;
+}
+function dividedBy( number2 ) {
+  const resultData = {
+    type: '/',
+    secondParam: number2,
+  }
+  
+  return resultData ;
+}
